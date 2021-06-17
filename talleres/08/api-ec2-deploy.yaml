@@ -5,9 +5,7 @@ Parameters:
   CodeDeployServicePolicy:
     Type: String
     Default: arn:aws:iam::aws:policy/service-role/AWSCodeDeployRole
-  KeyName:
-    Type: AWS::EC2::KeyPair::KeyName
-    Default: mythical-mysfits
+    
 
 Mappings:
   RegionMap:
@@ -87,7 +85,6 @@ Resources:
         - RegionMap
         - !Ref AWS::Region
         - AmiId
-      KeyName: !Ref KeyName
       SecurityGroups:
         - !Ref InstanceSG
       IamInstanceProfile: !Ref InstanceProfile
